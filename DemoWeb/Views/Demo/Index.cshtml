@@ -1,0 +1,39 @@
+﻿@model DemoBL.ViewModels.usp_CustOrdersDetails_ResultViewModel
+
+@{ 
+    Layout = null;
+}
+
+@using (Html.BeginForm("Index", "Demo", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.ProductName)
+    <input type="submit" name="name" value="Search" />
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Discount</th>
+                <th>Extended Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.orderDetailsVM)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.UnitPrice</td>
+                    <td>@item.Discount</td>
+                    <td>@item.ExtendedPrice</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+
+
+

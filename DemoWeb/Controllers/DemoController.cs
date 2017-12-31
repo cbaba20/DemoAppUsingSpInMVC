@@ -17,6 +17,7 @@ namespace DemoWeb.Controllers
 
             return View(viewModel);
         }
+        //post method
         [HttpPost]
         public ActionResult Index(usp_CustOrdersDetails_ResultViewModel order)
         {
